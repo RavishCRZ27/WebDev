@@ -5,7 +5,7 @@ const bodyparser= require("body-parser");
 const path = require("path");
 app.use(express.urlencoded({extended : true}));
 app.use(bodyparser.json());
-app.get("ravish", function (req, res) {
+app.get("/ravish", function (req, res) {
   res.json({
     name: "Ravish",
     age: 19,
