@@ -22,8 +22,9 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
   const user = req.body.user;
   const health = req.body.health;
-  const index = users.findIndex((u) => u.name === user);
-  users[index].kidneys.push({ healthy: health });
+  users[users.findIndex((u) => u.name === user)].kidneys.push({
+    healthy: health,
+  });
   res.json({ msg: "Done" });
 });
 
